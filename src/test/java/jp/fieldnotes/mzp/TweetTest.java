@@ -26,9 +26,9 @@ public class TweetTest {
 	}
 
 	@Test
-	public void hashtagのtweetは普通のtweetと判定されない() throws Exception {
+	public void hashtagのtweetがhashtagのtweetとして判定される() throws Exception {
 		Tweet tweet = createTweet("Alice", "あいうえお #hashtag");
-		assertThat(tweet.getTweet(), is("あいうえお #hashtag"));
+		assertThat(tweet.getTweet(), is("!HashTag\tあいうえお #hashtag"));
 
 	}
 
