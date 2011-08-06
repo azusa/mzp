@@ -14,7 +14,7 @@ public class Tweet {
 		if (body.startsWith("@")) {
 			return "Reply\t" + body;
 		} else if (body.contains("@")) {
-			return body;
+			return "Mention\t" + body;
 		} else if (body.contains("#")) {
 			return "!HashTag\t" + body;
 		} else {
