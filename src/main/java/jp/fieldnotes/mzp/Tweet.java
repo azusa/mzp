@@ -12,7 +12,7 @@ public class Tweet {
 		String[] elements = this.tweet.split("\t");
 		String body = elements[elements.length - 1];
 		if (body.startsWith("@")) {
-			return body;
+			return "Reply\t" + body;
 		} else if (body.contains("@")) {
 			return body;
 		} else if (body.contains("#")) {
