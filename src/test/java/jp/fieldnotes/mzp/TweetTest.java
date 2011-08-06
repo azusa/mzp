@@ -19,9 +19,9 @@ public class TweetTest {
 	}
 
 	@Test
-	public void mentionのtweetは普通のtweetと判定されない() throws Exception {
+	public void mentionのtweetがmentionのtweetとして判定される() throws Exception {
 		Tweet tweet = createTweet("Alice", "あいうえお @Bob");
-		assertThat(tweet.getTweet(), is("あいうえお @Bob"));
+		assertThat(tweet.getTweet(), is("Mention\tあいうえお @Bob"));
 
 	}
 
