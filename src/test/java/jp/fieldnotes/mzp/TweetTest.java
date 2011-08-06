@@ -32,6 +32,14 @@ public class TweetTest {
 
 	}
 
+	@Test
+	public void 複数の種類がある場合_カンマ区切りで出力される() {
+		Tweet tweet = createTweet("Alice", "@Alice あいうえお@Bob #hashtag");
+		assertThat(tweet.getTweet(),
+				is("Reply,Mention,!HashTag\tあいうえお #hashtag"));
+
+	}
+
 	private Tweet createTweet(String alias, String body) {
 		return new Tweet(alias + "\t" + body);
 	}
