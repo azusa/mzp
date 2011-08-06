@@ -7,7 +7,7 @@ public class Tweet {
 
 	public static final String NORMAL = "Normal";
 
-	private static final String HASH_TAG = "!HashTag";
+	public static final String HASH_TAG = "!HashTag";
 
 	public static final String MENTION = "Mention";
 

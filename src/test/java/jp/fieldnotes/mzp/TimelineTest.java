@@ -23,6 +23,8 @@ public class TimelineTest {
 		assertTweet(2, tweetList, Tweet.MENTION);
 		assertTweet(3, tweetList, Tweet.REPLY);
 		assertTweet(4, tweetList, Tweet.NORMAL);
+		assertTweet(5, tweetList, Tweet.NORMAL);
+		assertTweet(6, tweetList, Tweet.HASH_TAG);
 
 	}
 
