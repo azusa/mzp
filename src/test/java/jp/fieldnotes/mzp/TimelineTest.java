@@ -30,6 +30,7 @@ public class TimelineTest {
 		assertTweet(9, tweetList, Tweet.REPLY);
 		assertTweet(10, tweetList, Tweet.NORMAL);
 		assertTweet(11, tweetList, Tweet.NORMAL);
+		assertTweet(12, tweetList, Tweet.MENTION, Tweet.REPLY);
 
 	}
 
