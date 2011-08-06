@@ -20,15 +20,15 @@ public class TweetTest {
 	}
 
 	@Test
+	@Ignore
 	public void mentionのtweetは普通のtweetと判定されない() throws Exception {
-		Tweet tweet = createTweet("Alice", "あいうえお #hashtag");
-		assertThat(tweet.getTweet(), is("あいうえお #hashtag"));
 
 	}
 
 	@Test
-	@Ignore
 	public void hashtagのtweetは普通のtweetと判定されない() throws Exception {
+		Tweet tweet = createTweet("Alice", "あいうえお #hashtag");
+		assertThat(tweet.getTweet(), is("あいうえお #hashtag"));
 
 	}
 
