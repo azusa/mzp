@@ -16,7 +16,7 @@ public class Tweet {
 		} else if (body.contains("@")) {
 			return body;
 		} else if (body.contains("#")) {
-			return body;
+			return "!HashTag\t" + body;
 		} else {
 			return "Normal\t" + body;
 		}
