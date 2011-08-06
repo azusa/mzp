@@ -5,7 +5,13 @@ import java.util.List;
 
 public class Tweet {
 
-	public static final String POSTEDTIME_FORMAT = "yyyy/MM/dd HH:mm:ss";
+	public static final String NORMAL = "Normal";
+
+	private static final String HASH_TAG = "!HashTag";
+
+	public static final String MENTION = "Mention";
+
+	public static final String REPLY = "Reply";
 
 	private final String tweet;
 
@@ -18,16 +24,16 @@ public class Tweet {
 		String body = elements[elements.length - 1];
 		List<String> judge = new ArrayList<String>();
 		if (body.startsWith("@")) {
-			judge.add("Reply");
+			judge.add(REPLY);
 		}
 		if (body.substring(1).contains("@")) {
-			judge.add("Mention");
+			judge.add(MENTION);
 		}
 		if (body.contains("#")) {
-			judge.add("!HashTag");
+			judge.add(HASH_TAG);
 		}
 		if (judge.isEmpty()) {
-			return "Normal\t" + body;
+			return NORMAL + "\t" + body;
 		}
 		StringBuilder result = new StringBuilder();
 		for (int i = 0; i < judge.size(); i++) {
