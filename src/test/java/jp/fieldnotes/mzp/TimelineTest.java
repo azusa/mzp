@@ -10,9 +10,10 @@ import org.junit.Test;
 public class TimelineTest {
 
 	@Test
-	public void ネットワーク越しの取得ができること() {
+	public void ネットワーク越しの取得ができること() throws Exception {
 
-		Timeline timeline = new Timeline(new URL("http://tddbc.heroku.com/mzp/public_timeline"))
-		assertThat(timeline.getTweetList().size, is(20));
+		Timeline timeline = new Timeline(new URL(
+				"http://tddbc.heroku.com/mzp/public_timeline"));
+		assertThat(timeline.getTweetList().size(), is(20));
 	}
 }
