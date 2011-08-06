@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Tweet {
 
+	public static final String POSTEDTIME_FORMAT = "yyyy/MM/dd HH:mm:ss";
+
 	private final String tweet;
 
 	public Tweet(String string) {

@@ -41,6 +41,6 @@ public class TweetTest {
 	}
 
 	private Tweet createTweet(String alias, String body) {
-		return new Tweet(alias + "\t" + body);
+		return new Tweet("2011/08/06 00:01:02\t" + alias + "\t" + body);
 	}
 }
