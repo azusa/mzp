@@ -21,6 +21,8 @@ public class TimelineTest {
 		assertTweet(0, tweetList, Tweet.NORMAL);
 		assertTweet(1, tweetList, Tweet.REPLY);
 		assertTweet(2, tweetList, Tweet.MENTION);
+		assertTweet(3, tweetList, Tweet.REPLY);
+		assertTweet(4, tweetList, Tweet.NORMAL);
 
 	}
 
