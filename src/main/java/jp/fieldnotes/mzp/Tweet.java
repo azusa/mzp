@@ -17,9 +17,11 @@ public class Tweet {
 		List<String> judge = new ArrayList<String>();
 		if (body.startsWith("@")) {
 			judge.add("Reply");
-		} else if (body.contains("@")) {
+		}
+		if (body.substring(1).contains("@")) {
 			judge.add("Mention");
-		} else if (body.contains("#")) {
+		}
+		if (body.contains("#")) {
 			judge.add("!HashTag");
 		}
 		if (judge.isEmpty()) {
