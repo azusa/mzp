@@ -7,8 +7,6 @@ public class Tweet {
 	}
 
 	public String getTweet() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Normal\tあいうえお";
 	}
-
 }

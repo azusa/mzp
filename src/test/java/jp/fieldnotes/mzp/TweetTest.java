@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TweetTest {
 	@Test
 	public void replayでもmentionでもhashtagでもないtweetを普通のtweetと判定する() {
-		Tweet tweet = new Tweet("Alice\tあいうえお");
+		Tweet tweet = createTweet("Alice", "あいうえお");
 		assertThat(tweet.getTweet(), is("Normal\tあいうえお"));
 	}
 
@@ -31,4 +31,7 @@ public class TweetTest {
 
 	}
 
+	private Tweet createTweet(String alias, String body) {
+		return new Tweet(alias + "¥t" + body);
+	}
 }
