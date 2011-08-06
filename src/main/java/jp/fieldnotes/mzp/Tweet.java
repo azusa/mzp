@@ -25,6 +25,13 @@ public class Tweet {
 		if (judge.isEmpty()) {
 			return "Normal\t" + body;
 		}
-		return null;
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < judge.size(); i++) {
+			if (i != 0) {
+				result.append(",");
+			}
+			result.append(judge.get(i));
+		}
+		return result.toString();
 	}
 }
