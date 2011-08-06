@@ -18,14 +18,16 @@ public class TimelineTest {
 				"http://tddbc.heroku.com/mzp/public_timeline"));
 		List<Tweet> tweetList = timeline.getTweetList();
 		assertThat(tweetList.size(), is(20));
-		assertTweet(0, tweetList.get(0), Tweet.NORMAL);
+		assertTweet(0, tweetList, Tweet.NORMAL);
+		assertTweet(1, tweetList, Tweet.REPLY);
 
 	}
 
-	private void assertTweet(int offset, Tweet tweet, String... exptectType) {
+	private void assertTweet(int offset, List<Tweet> tweet,
+			String... exptectType) {
 		for (String type : exptectType) {
-			assertThat(Integer.toString(offset),
-					tweet.getTweet().split("\t")[0], is(containsString(type)));
+			assertThat(Integer.toString(offset), tweet.get(offset).getTweet()
+					.split("\t")[0], is(containsString(type)));
 		}
 	}
 }
