@@ -32,6 +32,6 @@ public class Tweet {
 			}
 			result.append(judge.get(i));
 		}
-		return result.toString();
+		return result.append("\t").append(body).toString();
 	}
 }
