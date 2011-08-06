@@ -2,7 +2,7 @@ package jp.fieldnotes.mzp;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
-import static org.mockito.Matchers.*;
+import static org.junit.matchers.JUnitMatchers.*;
 
 import java.net.URL;
 import java.util.List;
@@ -25,7 +25,7 @@ public class TimelineTest {
 	private void assertTweet(int offset, Tweet tweet, String... exptectType) {
 		for (String type : exptectType) {
 			assertThat(Integer.toString(offset),
-					tweet.getTweet().split("\t")[0], is(contains(type)));
+					tweet.getTweet().split("\t")[0], is(containsString(type)));
 		}
 	}
 }
