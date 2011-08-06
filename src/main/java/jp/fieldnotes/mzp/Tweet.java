@@ -2,11 +2,19 @@ package jp.fieldnotes.mzp;
 
 public class Tweet {
 
+	private final String tweet;
+
 	public Tweet(String string) {
-		// TODO Auto-generated constructor stub
+		this.tweet = string;
 	}
 
 	public String getTweet() {
-		return "Normal\tあいうえお";
+		String[] elements = this.tweet.split("\t");
+		String body = elements[elements.length - 1];
+		if (body.startsWith("@")) {
+			return body;
+		} else {
+			return "Normal\t" + body;
+		}
 	}
 }

@@ -16,7 +16,7 @@ public class TweetTest {
 	@Test
 	public void replayのtweetは普通のtweetと判定されない() throws Exception {
 		Tweet tweet = createTweet("Alice", "@Bob あいうえお");
-		assertThat(tweet.getTweet(), is("あいうえお"));
+		assertThat(tweet.getTweet(), is("@Bob あいうえお"));
 	}
 
 	@Test
@@ -32,6 +32,6 @@ public class TweetTest {
 	}
 
 	private Tweet createTweet(String alias, String body) {
-		return new Tweet(alias + "¥t" + body);
+		return new Tweet(alias + "\t" + body);
 	}
 }
