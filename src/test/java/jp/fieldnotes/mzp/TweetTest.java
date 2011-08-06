@@ -9,8 +9,8 @@ import org.junit.Test;
 public class TweetTest {
 	@Test
 	public void replayでもmentionでもhashtagでもないtweetを普通のtweetと判定する() {
-
-		assertThat(tweet.getNormal(), is("Normal\tあいうえお"));
+		Tweet tweet = new Tweet("Alice\tあいうえお");
+		assertThat(tweet.getTweet(), is("Normal\tあいうえお"));
 	}
 
 	@Test
