@@ -1,5 +1,6 @@
 package jp.fieldnotes.mzp;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 import org.junit.Ignore;
@@ -8,7 +9,8 @@ import org.junit.Test;
 public class TweetTest {
 	@Test
 	public void replayでもmentionでもhashtagでもないtweetを普通のtweetと判定する() {
-		fail();
+
+		assertThat(tweet.getNormal(), is("Normal\tあいうえお"));
 	}
 
 	@Test
