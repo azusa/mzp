@@ -27,6 +27,9 @@ public class TimelineTest {
 		assertTweet(6, tweetList, Tweet.HASH_TAG);
 		assertTweet(7, tweetList, Tweet.MENTION, Tweet.REPLY);
 		assertTweet(8, tweetList, Tweet.NORMAL);
+		assertTweet(9, tweetList, Tweet.REPLY);
+		assertTweet(10, tweetList, Tweet.NORMAL);
+		assertTweet(11, tweetList, Tweet.NORMAL);
 
 	}
 
