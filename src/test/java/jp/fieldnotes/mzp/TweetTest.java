@@ -14,9 +14,9 @@ public class TweetTest {
 	}
 
 	@Test
-	@Ignore
 	public void replayのtweetは普通のtweetと判定されない() throws Exception {
-
+		Tweet tweet = createTweet("Alice", "@Bob あいうえお");
+		assertThat(tweet.getTweet(), is("あいうえお"));
 	}
 
 	@Test
