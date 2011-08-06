@@ -3,7 +3,6 @@ package jp.fieldnotes.mzp;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class TweetTest {
@@ -20,8 +19,9 @@ public class TweetTest {
 	}
 
 	@Test
-	@Ignore
 	public void mentionのtweetは普通のtweetと判定されない() throws Exception {
+		Tweet tweet = createTweet("Alice", "あいうえお @Bob");
+		assertThat(tweet.getTweet(), is("あいうえお @Bob"));
 
 	}
 
