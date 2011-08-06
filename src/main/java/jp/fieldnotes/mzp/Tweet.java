@@ -13,6 +13,8 @@ public class Tweet {
 		String body = elements[elements.length - 1];
 		if (body.startsWith("@")) {
 			return body;
+		} else if (body.contains("@")) {
+			return body;
 		} else if (body.contains("#")) {
 			return body;
 		} else {
