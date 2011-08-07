@@ -44,4 +44,8 @@ public class Tweet {
 		}
 		return result.append("\t").append(body).toString();
 	}
+
+	boolean isUnOfficialRT() {
+		return true;
+	}
 }
