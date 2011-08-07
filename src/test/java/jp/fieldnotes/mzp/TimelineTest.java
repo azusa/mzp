@@ -7,6 +7,8 @@ import static org.junit.matchers.JUnitMatchers.*;
 import java.net.URL;
 import java.util.List;
 
+import junit.framework.AssertionFailedError;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -58,9 +60,16 @@ public class TimelineTest {
 
 	private void assertTweet(int offset, List<Tweet> tweet,
 			String... exptectType) {
+		String result = tweet.get(offset).getTweet().split("\t")[0];
+		int length = result.split(",").length;
+		if (length != exptectType.length) {
+			throw new AssertionFailedError(offset + "の解析結果の要素数が一致しません。期待値:"
+					+ exptectType + "実際:" + length + "("
+					+ tweet.get(offset).getTweet() + ")");
+		}
 		for (String type : exptectType) {
-			assertThat(Integer.toString(offset), tweet.get(offset).getTweet()
-					.split("\t")[0], is(containsString(type)));
+			assertThat(Integer.toString(offset), result,
+					is(containsString(type)));
 		}
 	}
 }
