@@ -42,7 +42,7 @@ public class TweetTest {
 
 	@Test
 	public void 非公式RTの判定ができること() {
-
+		Tweet tweet = createTweet("Mallor", "ふむ RT @Alice: ReTweetって2種類あるのね");
 		assertThat(tweet.isUnOfficialRT(), is(true));
 	}
 
