@@ -46,6 +46,12 @@ public class TweetTest {
 		assertThat(tweet.isUnOfficialRT(), is(true));
 	}
 
+	@Test
+	public void 非公式QTの判定ができること() {
+		Tweet tweet = createTweet("Mallor", "ふむ QT @Alice: ReTweetって2種類あるのね");
+		assertThat(tweet.isUnOfficialRT(), is(true));
+	}
+
 	private Tweet createTweet(String alias, String body) {
 		return new Tweet("2011/08/06 00:01:02\t" + alias + "\t" + body);
 	}
