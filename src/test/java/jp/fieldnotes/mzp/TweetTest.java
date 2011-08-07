@@ -40,6 +40,12 @@ public class TweetTest {
 
 	}
 
+	@Test
+	public void 非公式RTの判定ができること() {
+
+		assertThat(tweet.isUnOfficialRT(), is(true));
+	}
+
 	private Tweet createTweet(String alias, String body) {
 		return new Tweet("2011/08/06 00:01:02\t" + alias + "\t" + body);
 	}
