@@ -32,6 +32,10 @@ public class Tweet {
 		if (body.contains("#")) {
 			judge.add(HASH_TAG);
 		}
+		if (isUnOfficialRT()) {
+			judge.add("UnOfficialRT");
+		}
+
 		if (judge.isEmpty()) {
 			return NORMAL + "\t" + body;
 		}

@@ -43,9 +43,8 @@ public class TweetTest {
 	@Test
 	public void 非公式RTのtweetが非公式RTとして判定されること() {
 		Tweet tweet = createTweet("Alice", "RT @Alice あいうえお@Bob #hashtag");
-		assertThat(
-				tweet.getTweet(),
-				is("Reply,Mention,!HashTag,UnofficialRT\t@Alice あいうえお@Bob #hashtag"));
+		assertThat(tweet.getTweet(),
+				is("Mention,!HashTag,UnofficialRT\t@Alice あいうえお@Bob #hashtag"));
 
 	}
 
