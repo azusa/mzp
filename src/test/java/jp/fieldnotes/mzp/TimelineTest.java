@@ -7,15 +7,31 @@ import static org.junit.matchers.JUnitMatchers.*;
 import java.net.URL;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TimelineTest {
 
 	@Test
+	@Ignore
 	public void ネットワーク越しの取得ができること() throws Exception {
 
 		Timeline timeline = new Timeline(new URL(
 				"http://tddbc.heroku.com/mzp/public_timeline"));
+		exercise(timeline);
+
+	}
+
+	@Test
+	public void ローカルのリソースを使ったテストができること() throws Exception {
+
+		Timeline timeline = new Timeline(Thread.currentThread()
+				.getContextClassLoader().getResource("tweet.txt"));
+		exercise(timeline);
+
+	}
+
+	private void exercise(Timeline timeline) {
 		List<Tweet> tweetList = timeline.getTweetList();
 		assertThat(tweetList.size(), is(20));
 		assertTweet(0, tweetList, Tweet.NORMAL);
@@ -38,7 +54,6 @@ public class TimelineTest {
 		assertTweet(17, tweetList, Tweet.HASH_TAG);
 		assertTweet(18, tweetList, Tweet.MENTION);
 		assertTweet(19, tweetList, Tweet.MENTION, Tweet.HASH_TAG);
-
 	}
 
 	private void assertTweet(int offset, List<Tweet> tweet,
