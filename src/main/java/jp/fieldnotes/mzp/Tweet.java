@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Tweet {
 
+	public static final String UNOFFICIAL_RT = "UnofficialRT";
+
 	public static final String NORMAL = "Normal";
 
 	public static final String HASH_TAG = "!HashTag";
@@ -33,7 +35,7 @@ public class Tweet {
 			judge.add(HASH_TAG);
 		}
 		if (isUnOfficialRT()) {
-			judge.add("UnofficialRT");
+			judge.add(UNOFFICIAL_RT);
 		}
 
 		if (judge.isEmpty()) {
