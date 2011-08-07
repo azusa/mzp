@@ -46,6 +46,6 @@ public class Tweet {
 	}
 
 	boolean isUnOfficialRT() {
-		return true;
+		return this.tweet.contains("RT");
 	}
 }
