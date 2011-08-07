@@ -64,7 +64,7 @@ public class TimelineTest {
 		int length = result.split(",").length;
 		if (length != exptectType.length) {
 			throw new AssertionFailedError(offset + "の解析結果の要素数が一致しません。期待値:"
-					+ exptectType + "実際:" + length + "("
+					+ exptectType.length + "実際:" + length + "("
 					+ tweet.get(offset).getTweet() + ")");
 		}
 		for (String type : exptectType) {
