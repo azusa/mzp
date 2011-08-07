@@ -47,6 +47,12 @@ public class TweetTest {
 	}
 
 	@Test
+	public void QTの判定ができること() {
+		Tweet tweet = createTweet("Mallor", "ふむ QT @Alice: ReTweetって2種類あるのね");
+		assertThat(tweet.isUnOfficialRT(), is(true));
+	}
+
+	@Test
 	public void 通常のtweetは非公式RTとして判定されないこと() {
 		Tweet tweet = createTweet("Mallor", "@Alice あいうえお@Bob #hashtag");
 		assertThat(tweet.isUnOfficialRT(), is(false));
