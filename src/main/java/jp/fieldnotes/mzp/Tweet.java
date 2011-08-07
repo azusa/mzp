@@ -33,7 +33,7 @@ public class Tweet {
 			judge.add(HASH_TAG);
 		}
 		if (isUnOfficialRT()) {
-			judge.add("UnOfficialRT");
+			judge.add("UnofficialRT");
 		}
 
 		if (judge.isEmpty()) {
